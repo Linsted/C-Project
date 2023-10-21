@@ -25,3 +25,17 @@ string Worker::getFullName() {
 int Worker::getStartYear() {
     return startYear;
 }
+
+Worker::Worker() {
+    fullName = " ";
+    position = " ";
+    startYear = 0;
+    salary = 0.0;
+}
+
+Worker::Worker(string name, string pos, int year, double sal) {
+    fullName = name;
+    position = pos;
+    startYear = year;
+    salary = sal;
+}

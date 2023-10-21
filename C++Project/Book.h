@@ -25,5 +25,9 @@ public:
     string getTitle();
 
     string getAuthor();
+
+    Book();
+    Book(string a, string t, string p, int y, int count);
+
 };
 

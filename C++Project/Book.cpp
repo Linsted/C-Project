@@ -30,3 +30,19 @@ string Book::getTitle() {
 string Book::getAuthor() {
     return author;
 }
+
+Book::Book() {
+    author = " ";
+    title = " ";
+    publisher = " ";
+    year = 0;
+    pageCount = 0;
+}
+
+Book::Book(string a, string t, string p, int y, int count) {
+    author = a;
+    title = t;
+    publisher = p;
+    year = y;
+    pageCount = count;
+}

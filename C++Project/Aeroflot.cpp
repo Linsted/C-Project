@@ -30,3 +30,19 @@ string Aeroflot::getFlightNumber() {
 string Aeroflot::getDepartureTime() {
     return departureTime;
 }
+
+Aeroflot::Aeroflot() {
+    destination = " ";
+    flightNumber = " ";
+    aircraftType = " ";
+    departureTime = " ";
+    daysOfWeek = " ";
+}
+
+Aeroflot::Aeroflot(string dest, string number, string type, string time, string days) {
+    destination = dest;
+    flightNumber = number;
+    aircraftType = type;
+    departureTime = time;
+    daysOfWeek = days;
+}

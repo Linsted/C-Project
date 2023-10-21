@@ -103,6 +103,51 @@ int main()
    cout << "Worker 2: Full Name - " << worker2.getFullName() << ", Start Year - " << worker2.getStartYear() << endl;
 
 
+   // OOP-3
+
+   Student firstStudent;
+   firstStudent.print();
+
+   Student secondStudent("Sidorov","Sergii","Petrovych","04051991", "123 Main St", 0500404040, "Math",2);
+   secondStudent.print();
+
+   Student thirdStudent("Kowalski", "Jan", "Andrzej", "15.08.1990", "456 Elm St", 555555555, "Physics", 4);
+   thirdStudent.print();
+
+
+
+   Abiturient firstAbiturient("Sidorov", "Sergii", "Sergiyovych", "123 Main St", 4, 3, 2, 4, 5);
+   Abiturient secondAbiturient("Kuznetsov", "Igor", "Igorovych", "456 Elm St", 2, 1, 2, 3, 3);
+
+   firstAbiturient.checkExclusion();
+   secondAbiturient.checkExclusion();
+
+
+
+   Aeroflot firstFlight("New York", "AF123", "Boeing 747", "12:00", "Monday");
+   Aeroflot secondFlight("Los Angeles", "DL456", "Airbus A320", "14:30", "Wednesday");
+   Aeroflot thirdFlight("London", "BA789", "Boeing 777", "10:15", "Friday");
+
+   cout << "Flight 1: Flight Number - " << flight1.getFlightNumber() << ", Departure Time - " << flight1.getDepartureTime() << endl;
+   cout << "Flight 2: Flight Number - " << flight2.getFlightNumber() << ", Departure Time - " << flight2.getDepartureTime() << endl;
+   cout << "Flight 3: Flight Number - " << flight3.getFlightNumber() << ", Departure Time - " << flight3.getDepartureTime() << endl;
+
+
+   Book firstBook("George Orwell", "1984", "Penguin Books", 1949, 328);
+   Book secondBook("J.K. Rowling", "Harry Potter and the Sorcerer's Stone", "Scholastic", 1997, 309);
+
+   cout << "Book 1: Title - " << book1.getTitle() << ", Author - " << book1.getAuthor() << endl;
+   cout << "Book 2: Title - " << book2.getTitle() << ", Author - " << book2.getAuthor() << endl;
+
+
+
+   Worker firstWorker("John D. Doe", "Engineer", 2015, 50000.0);
+   Worker secondWorker("Jane A. Smith", "Manager", 2018, 60000.0);
+
+   cout << "Worker 1: Full Name - " << worker1.getFullName() << ", Start Year - " << worker1.getStartYear() << endl;
+   cout << "Worker 2: Full Name - " << worker2.getFullName() << ", Start Year - " << worker2.getStartYear() << endl;
+
+
 
 }
 
@@ -117,19 +162,3 @@ int main()
 
 
 
-
-
-
-
-
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.

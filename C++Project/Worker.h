@@ -20,4 +20,9 @@ public:
     string getFullName();
 
     int getStartYear();
+
+    Worker(); 
+    Worker(string name, string pos, int year, double sal);
+
+
 };

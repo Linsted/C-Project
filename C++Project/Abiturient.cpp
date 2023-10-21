@@ -45,3 +45,27 @@ void Abiturient::checkExclusion() {
 
 };
 
+
+Abiturient::Abiturient() {
+	surname = " ";
+	firstName = " ";
+	middleName = " ";
+	address = " ";
+	for (int i = 0; i < 5; i++) {
+		marks[i] = 0;
+	};
+};
+
+
+	Abiturient::Abiturient(string sName, string fName, string mName, string addr, int m1, int m2, int m3, int m4, int m5) {
+		surname = sName;
+		firstName = fName;
+		middleName = mName;
+		address = addr;
+		marks[0] = m1;
+		marks[1] = m2;
+		marks[2] = m3;
+		marks[3] = m4;
+		marks[4] = m5;
+	};
+
