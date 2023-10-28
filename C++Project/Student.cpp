@@ -2,36 +2,36 @@
 #include <iostream>
 using namespace std;
 
-void Student::setSurname(string studentSurname) {
-    surname = studentSurname;
+void Student::setSurname(string surname) {
+    this->surname = surname;
 };
 
-void Student::setName(string studentName) {
-    name = studentName;
+void Student::setName(string name) {
+    this->name = name;
 };
 
-void Student::setSecondName(string studentSecondName) {
-    secondName = studentSecondName;
+void Student::setSecondName(string secondName) {
+    this->secondName = secondName;
 };
 
-void Student::setBirthDate(string studentBirthDate) {
-    birthDate = studentBirthDate;
+void Student::setBirthDate(string birthDate) {
+    this->birthDate = birthDate;
 };
 
-void Student::setAddress(string studentAddress) {
-    address = studentAddress;
+void Student::setAddress(string address) {
+    this->address = address;
 };
 
-void Student::setPhone(int studentPhone) {
-    phone = studentPhone;
+void Student::setPhone(int phone) {
+    this->phone = phone;
 };
 
-void Student::setFaculty(string studentFaculty) {
-    faculty = studentFaculty;
+void Student::setFaculty(string faculty) {
+    this->faculty = faculty;
 }
 
-void Student::setCourse(int studentCourse) {
-    course = studentCourse;
+void Student::setCourse(int course) {
+    this->course = course;
 }
 
 string Student::getSurname() {
@@ -55,27 +55,31 @@ int Student::getCourse() {
 }
 
 Student::Student() {
-     surname = ' ';
-     name = ' ';
-     secondName = ' ';
-     birthDate = ' ';
-     address = ' ';
-     phone = 0;
-     faculty = ' ';
-     course = 1;
+    this->surname = ' ';
+    this->name = ' ';
+    this->secondName = ' ';
+    this->birthDate = ' ';
+    this->address = ' ';
+    this->phone = 0;
+    this->faculty = ' ';
+    this->course = 1;
 };
 
-Student::Student(string surnameValue, string nameValue, string secondNameValue, string birthDateValue, string addressValue, int phoneValue, string facultyValue, int courseValue) {
-    surname = surnameValue;
-    name = nameValue;
-    secondName = secondNameValue;
-    birthDate = birthDateValue;
-    address = addressValue;
-    phone = phoneValue;
-    faculty = facultyValue;
-    course = courseValue;
+Student::Student(string surname, string name, string secondName, string birthDate, string address, int phone, string faculty, int course) {
+    this->surname = surname;
+    this->name = name;
+    this->secondName = secondName;
+    this->birthDate = birthDate;
+    this->address = address;
+    this->phone = phone;
+    this->faculty = faculty;
+    this->course = course;
 }
 
 void Student::print() {
     cout << "Student: " << surname << ", " << name << ", " << secondName << ", " << birthDate << ", " << address << ", " << phone << ", " << faculty << ", " << course << endl;
 };
+
+
+Student::~Student() {}; 
+

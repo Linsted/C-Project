@@ -21,5 +21,6 @@ public:
     Abiturient();
     Abiturient(string sName, string fName, string mName, string addr, int m1, int m2, int m3, int m4, int m5);
 
+    ~Abiturient();
 };
 

@@ -24,5 +24,5 @@ public:
     Worker(); 
     Worker(string name, string pos, int year, double sal);
 
-
+    ~Worker();
 };

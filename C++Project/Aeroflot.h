@@ -30,6 +30,6 @@ public:
     Aeroflot(); 
     Aeroflot(string dest, string number, string type, string time, string days);  
 
-
+    ~Aeroflot();
 };
 

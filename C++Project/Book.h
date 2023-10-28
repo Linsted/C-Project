@@ -29,5 +29,6 @@ public:
     Book();
     Book(string a, string t, string p, int y, int count);
 
+    ~Book();
 };
 

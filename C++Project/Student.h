@@ -45,5 +45,6 @@ public:
     Student();
     Student(string surname, string name, string secondName, string birthDate, string address, int phone, string faculty, int course);
 
+    ~Student();
 };
 

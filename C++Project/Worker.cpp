@@ -2,20 +2,20 @@
 #include <iostream>
 using namespace std;
 
-void Worker::setFullName(string name) {
-    fullName = name;
+void Worker::setFullName(string fullName) {
+    this->fullName = fullName;
 }
 
-void Worker::setPosition(string pos) {
-    position = pos;
+void Worker::setPosition(string position) {
+    this->position = position;
 }
 
-void Worker::setStartYear(int year) {
-    startYear = year;
+void Worker::setStartYear(int startYear) {
+    this->startYear = startYear;
 }
 
-void Worker::setSalary(double sal) {
-    salary = sal;
+void Worker::setSalary(double salary) {
+    this->salary = salary;
 }
 
 string Worker::getFullName() {
@@ -27,15 +27,17 @@ int Worker::getStartYear() {
 }
 
 Worker::Worker() {
-    fullName = " ";
-    position = " ";
-    startYear = 0;
-    salary = 0.0;
+    this->fullName = " ";
+    this->position = " ";
+    this->startYear = 0;
+    this->salary = 0.0;
 }
 
-Worker::Worker(string name, string pos, int year, double sal) {
-    fullName = name;
-    position = pos;
-    startYear = year;
-    salary = sal;
+Worker::Worker(string fullName, string position, int startYear, double salary) {
+    this->fullName = fullName;
+    this->position = position;
+    this->startYear = startYear;
+    this->salary = salary;
 }
+
+Worker::~Worker() {}
