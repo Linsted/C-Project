@@ -3,24 +3,31 @@
 using namespace std;
 
 class Abiturient {
-	string surname;
+    string surname;
     string firstName;
     string middleName;
     string address;
-    int marks[5];
+    int* marks;
+    int numMarks;
+    double averageMark;
 
 public:
+    Abiturient();
+    Abiturient(string sName, string fName, string mName, string addr, int num);
+    Abiturient(const Abiturient& other);
+    ~Abiturient();
+
     void setSurname(string sName);
     void setFirstName(string fName);
     void setMiddleName(string mName);
     void setAddress(string addr);
-    void setMarks(int m1, int m2, int m3, int m4, int m5);
+    void setMarks(int num);
     int* getMarks();
-    void checkExclusion();
+    double getAverageMark() const;
+    void checkExclusion() const;
+    void displayInfo() const; 
 
-    Abiturient();
-    Abiturient(string sName, string fName, string mName, string addr, int m1, int m2, int m3, int m4, int m5);
 
-    ~Abiturient();
+    void printObjectAddress() const;
+    void printArrayAddress() const;
 };
-

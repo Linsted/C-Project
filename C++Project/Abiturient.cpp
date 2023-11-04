@@ -2,72 +2,118 @@
 #include <iostream>
 using namespace std;
 
-void Abiturient::setSurname(string surname) {
-	this->surname = surname;
-};
+Abiturient::Abiturient() : surname(" "), firstName(" "), middleName(" "), address(" "), marks(nullptr), numMarks(0), averageMark(0.0) {
+    cout << "Abiturient object created at address: " << this << endl;
+    printArrayAddress();
+}
 
-void Abiturient::setFirstName(string firstName) {
-	this->firstName = firstName;
-};
+Abiturient::Abiturient(string sName, string fName, string mName, string addr, int num) : surname(sName), firstName(fName), middleName(mName), address(addr), numMarks(num), averageMark(0.0) {
+    marks = new int[numMarks];
+    for (int i = 0; i < numMarks; i++) {
+        cout << "Enter mark " << i + 1 << ": ";
+        cin >> marks[i];
+        averageMark += marks[i];
+    }
+    if (numMarks > 0) {
+        averageMark /= numMarks;
+    }
+    cout << "Abiturient object created at address: " << this << endl;
+    printArrayAddress();
+}
 
-void Abiturient::setMiddleName(string middleName) {
-	this->middleName = middleName;
-};
+Abiturient::Abiturient(const Abiturient& other) : surname(other.surname), firstName(other.firstName), middleName(other.middleName), address(other.address), numMarks(other.numMarks), averageMark(0.0) {
+    if (other.marks != nullptr) {
+        marks = new int[numMarks];
+        for (int i = 0; i < numMarks; i++) {
+            marks[i] = other.marks[i];
+            averageMark += marks[i];
+        }
+        if (numMarks > 0) {
+            averageMark /= numMarks;
+        }
+    }
+    else {
+        marks = nullptr;
+    }
+    cout << "Abiturient copy constructor created at address: " << this << endl;
+    printArrayAddress();
+}
 
-void Abiturient::setAddress(string address) {
-	this->address = address;
-};
+Abiturient::~Abiturient() {
+    printArrayAddress();
 
-void Abiturient::setMarks(int m1, int m2, int m3, int m4, int m5) {
-	this->marks[0] = m1;
-	this->marks[1] = m2;
-	this->marks[2] = m3;
-	this->marks[3] = m4;
-	this->marks[4] = m5;
-};
+    if (marks != nullptr) {
+        delete[] marks;
+        marks = nullptr;
+    }
+    cout << "Abiturient object destroyed at address: " << this << endl;
+    
+}
+
+void Abiturient::setSurname(string sName) {
+    surname = sName;
+}
+
+void Abiturient::setFirstName(string fName) {
+    firstName = fName;
+}
+
+void Abiturient::setMiddleName(string mName) {
+    middleName = mName;
+}
+
+void Abiturient::setAddress(string addr) {
+    address = addr;
+}
+
+void Abiturient::setMarks(int num) {
+    if (marks != nullptr) {
+        delete[] marks;
+    }
+    numMarks = num;
+    marks = new int[numMarks];
+    averageMark = 0.0;
+    for (int i = 0; i < numMarks; i++) {
+        cout << "Enter mark " << i + 1 << ": ";
+        cin >> marks[i];
+        averageMark += marks[i];
+    }
+    if (numMarks > 0) {
+        averageMark /= numMarks;
+    }
+}
 
 int* Abiturient::getMarks() {
-	return marks;
-};
+    return marks;
+}
 
-void Abiturient::checkExclusion() {
-	int count = 0;
+double Abiturient::getAverageMark() const {
+    return averageMark;
+}
 
-	for (int i = 0; i < 5; i++ ) {
-		if (marks[i] <= 2) {
-			count ++; 
-		}
-	};
+void Abiturient::checkExclusion() const {
+    int count = 0;
+    for (int i = 0; i < numMarks; i++) {
+        if (marks[i] <= 2) {
+            count++;
+        }
+    }
 
-	if (count >= 2) {
-		cout << "Student " << surname << " " << firstName << " " << middleName << " should be excluded." << endl;
-	}
+    if (count >= 2) {
+        cout << "Student " << surname << " " << firstName << " " << middleName << " should be excluded." << endl;
+    }
+}
 
-};
+void Abiturient::displayInfo() const {
+    cout << "Name: " << firstName << " " << middleName << " " << surname << endl;
+    cout << "Address: " << address << endl;
+    cout << "Average Mark: " << averageMark << endl;
+}
 
+void Abiturient::printObjectAddress() const {
+    cout << "Object Address: " << this << endl;
+}
 
-Abiturient::Abiturient() {
-	this->surname = " ";
-	this->firstName = " ";
-	this->middleName = " ";
-	this->address = " ";
-	
-	for (int i = 0; i < 5; i++) {
-		this->marks[i] = 0;
-	};
-};
-
-
-	Abiturient::Abiturient(string surname, string firstName, string middleName, string address, int m1, int m2, int m3, int m4, int m5) {
-		this->surname = surname;
-		this->firstName = firstName;
-		this->middleName = middleName;
-		this->address = address;
-		this->marks[0] = m1;
-		this->marks[1] = m2;
-		this->marks[2] = m3;
-		this->marks[3] = m4;
-		this->marks[4] = m5;
-	};
-
-	Abiturient::~Abiturient() {};
+void Abiturient::printArrayAddress() const {
+    cout << "Marks Array Address: " << marks << endl;
+}

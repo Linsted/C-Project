@@ -22,22 +22,45 @@ int main()
     student2.setFaculty("Physics");
     student2.setCourse(3);
 
+    //Abiturient
+
+    Abiturient firstAbiturient;
+    firstAbiturient.setSurname("Sidorov");
+    firstAbiturient.setFirstName("Sergii");
+    firstAbiturient.setMiddleName("Sergiyovych");
+    firstAbiturient.setAddress("123 Main St");
+    firstAbiturient.setMarks(4); 
+
+    int* firstAbiturientMarks = firstAbiturient.getMarks();
+    for (int i = 0; i < 4; i++) {
+        cout << "Enter mark " << i + 1 << ": ";
+        cin >> firstAbiturientMarks[i];
+    };
 
 
-    Abiturient abiturient1;
-    abiturient1.setSurname("Sidorov");
-    abiturient1.setFirstName("Sergii");
-    abiturient1.setMiddleName("Sergiyovych");
-    abiturient1.setAddress("123 Main St");
-    abiturient1.setMarks(4, 3, 2, 4, 5);
-    Abiturient abiturient2;
-    abiturient2.setSurname("Kuznetsov");
-    abiturient2.setFirstName("Igor");
-    abiturient2.setMiddleName("Igorovych");
-    abiturient2.setAddress("456 Elm St");
-    abiturient2.setMarks(2, 1, 2, 3, 3);
+    Abiturient secondAbiturient;
+    secondAbiturient.setSurname("Kuznetsov");
+    secondAbiturient.setFirstName("Igor");
+    secondAbiturient.setMiddleName("Igorovych");
+    secondAbiturient.setAddress("456 Elm St");
+    secondAbiturient.setMarks(5); 
+ 
+    int* secondAbiturientMarks = secondAbiturient.getMarks();
+    for (int i = 0; i < 5; i++) {
+        cout << "Enter mark " << i + 1 << ": ";
+        cin >> secondAbiturientMarks[i];
+    };
 
+    Abiturient firstAbiturient1("Sidorov", "Sergii", "Sergiyovych", "123 Main St", 4);
+    Abiturient secondAbiturient2("Kuznetsov", "Igor", "Igorovych", "456 Elm St", 5);
 
+    firstAbiturient.checkExclusion();
+    secondAbiturient.checkExclusion();
+
+    firstAbiturient.displayInfo();
+    secondAbiturient.displayInfo();
+
+    //Abiturient - END
 
     Aeroflot flight1;
     Aeroflot flight2;
@@ -88,8 +111,7 @@ int main()
     cout << "Student 1: " << student1.getSurname() << ", " << student1.getName() << ", " << student1.getSecondName() << ", " << student1.getFaculty() << ", " << student1.getCourse() << endl;
     cout << "Student 2: " << student2.getSurname() << ", " << student2.getName() << ", " << student2.getSecondName() << ", " << student2.getFaculty() << ", " << student2.getCourse() << endl;
 
-    abiturient1.checkExclusion();
-    abiturient2.checkExclusion();
+
 
    cout << "Flight 1: Flight Number - " << flight1.getFlightNumber() << ", Departure Time - " << flight1.getDepartureTime() << endl;
    cout << "Flight 2: Flight Number - " << flight2.getFlightNumber() << ", Departure Time - " << flight2.getDepartureTime() << endl;
@@ -116,11 +138,7 @@ int main()
 
 
 
-   Abiturient firstAbiturient("Sidorov", "Sergii", "Sergiyovych", "123 Main St", 4, 3, 2, 4, 5);
-   Abiturient secondAbiturient("Kuznetsov", "Igor", "Igorovych", "456 Elm St", 2, 1, 2, 3, 3);
 
-   firstAbiturient.checkExclusion();
-   secondAbiturient.checkExclusion();
 
 
 
