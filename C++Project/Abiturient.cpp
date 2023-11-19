@@ -50,65 +50,94 @@ Abiturient::~Abiturient() {
     
 }
 
-void Abiturient::setSurname(string sName) {
-    surname = sName;
-}
 
-void Abiturient::setFirstName(string fName) {
-    firstName = fName;
-}
+Abiturient& Abiturient::operator=(const Abiturient& other) {
 
-void Abiturient::setMiddleName(string mName) {
-    middleName = mName;
-}
 
-void Abiturient::setAddress(string addr) {
-    address = addr;
-}
-
-void Abiturient::setMarks(int num) {
+    // Звільнення пам'яті
     if (marks != nullptr) {
         delete[] marks;
+        marks = nullptr;
     }
-    numMarks = num;
-    marks = new int[numMarks];
-    averageMark = 0.0;
-    for (int i = 0; i < numMarks; i++) {
-        cout << "Enter mark " << i + 1 << ": ";
-        cin >> marks[i];
-        averageMark += marks[i];
-    }
-    if (numMarks > 0) {
-        averageMark /= numMarks;
-    }
-}
 
-int* Abiturient::getMarks() {
-    return marks;
-}
+    // Копіювання даних
+    surname = other.surname;
+    firstName = other.firstName;
+    middleName = other.middleName;
+    address = other.address;
+    numMarks = other.numMarks;
+    averageMark = other.averageMark;
 
-double Abiturient::getAverageMark() const {
-    return averageMark;
-}
-
-void Abiturient::checkExclusion() const {
-    int count = 0;
-    for (int i = 0; i < numMarks; i++) {
-        if (marks[i] <= 2) {
-            count++;
+    // Копіювання масиву
+    if (other.marks != nullptr) {
+        marks = new int[numMarks];
+        for (int i = 0; i < numMarks; i++) {
+            marks[i] = other.marks[i];
         }
     }
 
-    if (count >= 2) {
-        cout << "Student " << surname << " " << firstName << " " << middleName << " should be excluded." << endl;
-    }
+    return *this;
 }
 
-void Abiturient::displayInfo() const {
-    cout << "Name: " << firstName << " " << middleName << " " << surname << endl;
-    cout << "Address: " << address << endl;
-    cout << "Average Mark: " << averageMark << endl;
-}
+//void Abiturient::setSurname(string sName) {
+//    surname = sName;
+//}
+//
+//void Abiturient::setFirstName(string fName) {
+//    firstName = fName;
+//}
+//
+//void Abiturient::setMiddleName(string mName) {
+//    middleName = mName;
+//}
+//
+//void Abiturient::setAddress(string addr) {
+//    address = addr;
+//}
+//
+//void Abiturient::setMarks(int num) {
+//    if (marks != nullptr) {
+//        delete[] marks;
+//    }
+//    numMarks = num;
+//    marks = new int[numMarks];
+//    averageMark = 0.0;
+//    for (int i = 0; i < numMarks; i++) {
+//        cout << "Enter mark " << i + 1 << ": ";
+//        cin >> marks[i];
+//        averageMark += marks[i];
+//    }
+//    if (numMarks > 0) {
+//        averageMark /= numMarks;
+//    }
+//}
+//
+//int* Abiturient::getMarks() {
+//    return marks;
+//}
+//
+//double Abiturient::getAverageMark() const {
+//    return averageMark;
+//}
+//
+//void Abiturient::checkExclusion() const {
+//    int count = 0;
+//    for (int i = 0; i < numMarks; i++) {
+//        if (marks[i] <= 2) {
+//            count++;
+//        }
+//    }
+//
+//    if (count >= 2) {
+//        cout << "Student " << surname << " " << firstName << " " << middleName << " should be excluded." << endl;
+//    }
+//}
+//
+//void Abiturient::displayInfo() const {
+//    cout << "Name: " << firstName << " " << middleName << " " << surname << endl;
+//    cout << "Address: " << address << endl;
+//    cout << "Average Mark: " << averageMark << endl;
+//}
 
 void Abiturient::printObjectAddress() const {
     cout << "Object Address: " << this << endl;

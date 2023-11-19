@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
+#include "Book.h"
 using namespace std;
+
+class Book;
 
 class Student
 {
@@ -44,7 +47,10 @@ public:
 
     Student();
     Student(string surname, string name, string secondName, string birthDate, string address, int phone, string faculty, int course);
+  /*  void Show(Book& book);*/
+    friend void checkBuyer(const Book& book, const Student& student);
+
+  
 
     ~Student();
 };
-

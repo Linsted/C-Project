@@ -1,5 +1,7 @@
+
 #include "Student.h"
 #include <iostream>
+#include "Book.h"
 using namespace std;
 
 void Student::setSurname(string surname) {
@@ -80,6 +82,23 @@ void Student::print() {
     cout << "Student: " << surname << ", " << name << ", " << secondName << ", " << birthDate << ", " << address << ", " << phone << ", " << faculty << ", " << course << endl;
 };
 
+//void Show(const Student& student, const Book& book) {
+//    std::cout << "Student " << student.surname << " ";
+//
+//   
+//    for (const std::string& buyer : book.buyers) {
+//        if (buyer == student.surname) {
+//            std::cout << "has purchased the book: " << book.title << std::endl;
+//            return;
+//        }
+//    }
+//
+//    std::cout << "has not purchased the book: " << book.title << std::endl;
+//}
 
-Student::~Student() {}; 
+
+
+Student::~Student() {}
+
+;
 

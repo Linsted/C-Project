@@ -17,16 +17,19 @@ public:
     Abiturient(const Abiturient& other);
     ~Abiturient();
 
-    void setSurname(string sName);
-    void setFirstName(string fName);
-    void setMiddleName(string mName);
-    void setAddress(string addr);
-    void setMarks(int num);
-    int* getMarks();
-    double getAverageMark() const;
-    void checkExclusion() const;
-    void displayInfo() const; 
+    //void setSurname(string sName);
+    //void setFirstName(string fName);
+    //void setMiddleName(string mName);
+    //void setAddress(string addr);
+    //void setMarks(int num);
+    //int* getMarks();
+    //double getAverageMark() const;
+    //void checkExclusion() const;
+    //void displayInfo() const; 
 
+
+       // Перевантаження оператора привласнення
+    Abiturient& operator=(const Abiturient& other);
 
     void printObjectAddress() const;
     void printArrayAddress() const;

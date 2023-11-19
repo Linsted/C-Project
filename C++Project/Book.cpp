@@ -22,6 +22,11 @@ void Book::setPageCount(int pageCount) {
     this->pageCount = pageCount;
 }
 
+void Book::setBuyers(const vector<string>& buyers)
+{
+    this->buyers = buyers;
+}
+
 
 string Book::getTitle() {
     return title;
@@ -29,6 +34,11 @@ string Book::getTitle() {
 
 string Book::getAuthor() {
     return author;
+}
+
+vector<string> Book::getBuyers()
+{
+    return buyers;
 }
 
 Book::Book() {
@@ -39,12 +49,13 @@ Book::Book() {
     this->pageCount = 0;
 }
 
-Book::Book(string author, string title, string publisher, int year, int pageCount) {
+Book::Book(string author, string title, string publisher, int year, int pageCount, const vector<string>& buyers) {
     this->author = author;
     this->title = title;
     this->publisher = publisher;
     this->year = year;
     this->pageCount = pageCount;
+    this->buyers = buyers; 
 }
 
 Book::~Book() {};
